@@ -213,9 +213,6 @@ body{
     .apresentacao__habilidades{
         margin-top: 50px;
     }
-    .apresentacao__conteudo__titulo{
-        text-align: justify;
-    }
     .apresentacao__links__navegacao{
         width: 70%;
     }
@@ -234,9 +231,10 @@ body{
     }
     .apresentacao__perfil{
         margin-top: 70px;
+        width: 50%;
     }
     .cabecalho__menu__link{
-        font-size: 16px;
+        font-size: 1.1rem;
     }
     
 }
