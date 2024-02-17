@@ -306,7 +306,12 @@ body .modo-escuro .modo-toggle .bola {
         display: flex;
         align-items: center;
         padding: 2%;
-        overflow: hidden;
+    }
+    .cabecalho-menu-ativo{
+        align-items: flex-start;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: 0.5s;
     }
     .cabecalho__menu{
         /* gap: 10px; */

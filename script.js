@@ -26,15 +26,7 @@ function abrirMenu(){
 
     //Verificar se o menu está aberto ou fechado e executar as devidas ações
     if (cabecalho.classList.contains('cabecalho-menu-ativo')){
-        //Abrindo o Menu
-        setTimeout(() => {
-            cabecalho.style.alignItems = 'flex-start';
-            cabecalho.style.height = '100%';
-            cabecalho.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-            cabecalho.style.transition = '0.5s';
-        }, 100);
         
-        //Adicionando o Evento de Fechar Menu ao Botão do Cabecalho
     } else {
         //Fechando o Menu
         cabecalho.style.height = '';
