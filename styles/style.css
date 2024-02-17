@@ -151,7 +151,6 @@ body{
     font-family: var(--paragraph-font-montserrat);
     font-size: 1rem;
     font-weight: 600;
-    width: 100%;
     color: white;
 }
 
