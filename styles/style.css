@@ -218,12 +218,26 @@ body{
         flex-direction: column;
         height: 40px;
         width: 45px;
+        transition: 0.5s;
     }
     .menu-bar__barra{
         background-color: black;
         border-radius: 8px;
         width: 40px;
         height: 4px;
+    }
+    .menu-ativo .barra-1 {
+        transform: rotate(-45deg) translate(-8px, 5px);
+        transition: 0.5s;
+    }
+  
+    .menu-ativo .barra-2 {
+        opacity: 0;
+    }
+  
+    .menu-ativo .barra-3 {
+        transform: rotate(45deg) translate(-6px, -5px);
+        transition: 0.5s;
     }
     .menu-ativo{
         width: 100%;

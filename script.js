@@ -8,8 +8,11 @@ function abrirMenu(){
     let cabecalhoMenuDestaque = document.querySelector('.cabecalho__menu__destaque');
     let menu = document.querySelector('.menu-inativo');
     let menuBar = document.querySelector('.menu-bar');
-    menuBar.style.marginBottom = '10px';
+    let barra1 = document.querySelector('.menu-ativo .barra-1');
+    let barra2 = document.querySelector('.menu-ativo .barra-2');
+    let barra3 = document.querySelector('.menu-ativo .barra-3');
 
+    menuBar.style.marginBottom = '10px';
     menu.classList.toggle('menu-ativo');
     cabecalhoMenuDestaque.style.padding = '2%';
     cabecalhoMenuDestaque.style.width = '100%';
@@ -31,7 +34,7 @@ function abrirMenu(){
             cabecalho.style.height = '100%';
             cabecalho.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
             cabecalho.style.transition = '0.5s';
-        }, 1);
+        }, 100);
         
         //Adicionando o Evento de Fechar Menu ao Botão do Cabecalho
     } else {
@@ -39,6 +42,10 @@ function abrirMenu(){
         cabecalho.style.height = '';
         cabecalho.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
         menuBar.style.marginBottom = '';
+        barra1.style.transition = '0.3s';
+        barra2.style.transition = '0.3s';
+        barra3.style.transition = '0.3s';
+
 
 
     }
