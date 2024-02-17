@@ -151,6 +151,7 @@ body{
     font-family: var(--paragraph-font-montserrat);
     font-size: 1rem;
     font-weight: 600;
+    width: 100%;
     color: white;
 }
 
@@ -183,9 +184,6 @@ body{
         height: 50px;
     }
 }
-.menu-bar{
-    display: none;
-}
 
 
 @media (max-width: 1024px){
@@ -210,6 +208,26 @@ body{
 }
 
 @media (max-width: 500px){
+    .menu-bar{
+        background-color: whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        border-radius: 8px;
+        flex-direction: column;
+        height: 30px;
+        width: 45px;
+    }
+    .menu-bar__barra{
+        background-color: black;
+        border-radius: 8px;
+        width: 40px;
+        height: 4px;
+    }
+    .menu-ativo{
+        width: 100%;
+    }
     .apresentacao__habilidades{
         margin-top: 50px;
     }
@@ -221,10 +239,13 @@ body{
         justify-content: center;
     }
     .cabecalho{
-        padding: 0;
+        display: flex;
+        align-items: center;
+        padding: 2%;
     }
     .cabecalho__menu{
-        gap: 10px;
+        /* gap: 10px; */
+        display: none;
     }
     .cabecalho__menu__destaque{
         padding: 4.1%;
@@ -233,8 +254,12 @@ body{
         margin-top: 70px;
         width: 50%;
     }
+    .cabecalho__menu__destaque{
+        font-size: 1.5rem;
+        text-align: center;
+    }
     .cabecalho__menu__link{
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
     
 }

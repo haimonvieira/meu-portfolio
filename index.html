@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
     <header class="cabecalho">
+      <div class="menu-inativo">
+        <div class="menu-bar" onclick="abrirMenu()">
+          <div class="menu-bar__barra"></div>
+          <div class="menu-bar__barra"></div>
+          <div class="menu-bar__barra"></div>
+        </div>
         <nav class="cabecalho__menu">
-            <a class="cabecalho__menu__destaque" href="index.html">Início</a>
-            <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
-            <a class="cabecalho__menu__link">Contato</a>
-            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>    
+          <a class="cabecalho__menu__destaque" href="index.html">Início</a>
+          <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
+          <a class="cabecalho__menu__link">Contato</a>
+          <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
         </nav>
-        <a><img class="menu-bar" src="assets/icons/menu-bar.png" alt=""></a>
+      </div>
     </header>
     <main class="apresentacao">
+      <section class="apresentacao__conteudo">
+        <h1 class="apresentacao__conteudo__titulo">
+          Eleve seu negócio digital a outro nível
+          <span class="titulo-destaque">com um Front-end de qualidade!</span>
+        </h1>
 
-        <section class="apresentacao__conteudo">
+        <p class="apresentacao__conteudo__paragrafo">
+          Olá! Sou Haimon Cugler Vieira, desenvolvedor Front-end e Back-end.
+          Ajudo pequenos negócios e designers a colocarem em prática boas
+          ideias. Vamos conversar?
+        </p>
 
-            <h1 class="apresentacao__conteudo__titulo">Eleve seu negócio digital a outro nível <span class="titulo-destaque">com um Front-end de qualidade!</span></h1>
-            
-            <p class="apresentacao__conteudo__paragrafo">Olá! Sou Haimon Cugler Vieira, desenvolvedor Front-end e Back-end. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?</p>
+        <div class="apresentacao__links">
+          <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
+          <a
+            class="apresentacao__links__navegacao"
+            href="https://github.com/haimonvieira"
+          >
+            <img src="assets/logo-github.png" alt="Logo do GitHub" />
+            GitHub
+          </a>
+          <a
+            class="apresentacao__links__navegacao"
+            href="https://linkedin.com/in/haimonvieira"
+          >
+            <img src="assets/logo-linkedin.png" alt="Logo LinkedIn" />
+            LinkedIn
+          </a>
+          <a
+            class="apresentacao__links__navegacao"
+            href="https://instagram.com/haimonvieira"
+          >
+            <img src="assets/logo-instagram.png" alt="Logo do instagram" />
+            Instagram
+          </a>
+        </div>
+      </section>
 
-            <div class="apresentacao__links">
-                
-                <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
-                <a class="apresentacao__links__navegacao" href="https://github.com/haimonvieira">
-                    <img src="assets/logo-github.png" alt="Logo do GitHub">
-                    GitHub
-                </a>
-                <a class="apresentacao__links__navegacao" href="https://linkedin.com/in/haimonvieira">
-                    <img src="assets/logo-linkedin.png" alt="Logo LinkedIn">
-                    LinkedIn
-                </a>
-                <a class="apresentacao__links__navegacao" href="https://instagram.com/haimonvieira">
-                    <img src="assets/logo-instagram.png" alt="Logo do instagram">
-                    Instagram
-                </a>
-                
-            </div>
-
-        </section>
-
-        <img class="apresentacao__perfil" src="assets/foto_de_perfil.jpg" alt="Foto do autor">
-        
+      <img
+        class="apresentacao__perfil"
+        src="assets/foto_de_perfil.jpg"
+        alt="Foto do autor"
+      />
     </main>
     <footer>
-        <p class="rodape">Desenvolvido por Haimon Cugler Vieira.</p>
+      <p class="rodape">Desenvolvido por Haimon Cugler Vieira.</p>
     </footer>
-</body>
+  </body>
 </html>
