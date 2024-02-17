@@ -216,7 +216,7 @@ body{
         gap: 5px;
         border-radius: 8px;
         flex-direction: column;
-        height: 30px;
+        height: 40px;
         width: 45px;
     }
     .menu-bar__barra{
@@ -242,6 +242,7 @@ body{
         display: flex;
         align-items: center;
         padding: 2%;
+        overflow: hidden;
     }
     .cabecalho__menu{
         /* gap: 10px; */

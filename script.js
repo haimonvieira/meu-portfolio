@@ -7,6 +7,9 @@ function abrirMenu(){
     let cabecalhoMenu = document.querySelector('.cabecalho__menu');
     let cabecalhoMenuDestaque = document.querySelector('.cabecalho__menu__destaque');
     let menu = document.querySelector('.menu-inativo');
+    let menuBar = document.querySelector('.menu-bar');
+    menuBar.style.marginBottom = '10px';
+
     menu.classList.toggle('menu-ativo');
     cabecalhoMenuDestaque.style.padding = '2%';
     cabecalhoMenuDestaque.style.width = '100%';
@@ -35,6 +38,8 @@ function abrirMenu(){
         //Fechando o Menu
         cabecalho.style.height = '';
         cabecalho.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+        menuBar.style.marginBottom = '';
+
 
     }
 }
