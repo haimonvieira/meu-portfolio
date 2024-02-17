@@ -171,6 +171,7 @@ body{
     border: 2px solid;
     padding: 10px;
     transition: 0.5s;
+    color: black;
 }
 .box:hover{
     height: 115px;
@@ -182,6 +183,56 @@ body{
         width: 50px;
         height: 50px;
     }
+}
+
+/* Modo escuro */
+body.modo-escuro{
+    color: black;
+}
+body.modo-escuro .botao-decodificar:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.modo-toggle {
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+    height: 20px;
+    width: 70px;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.bola {
+    width: 30px;
+    height: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+body.modo-escuro {
+    background-color: #333;
+    color: #fff;
+}
+body.modo-escuro .texto-imagem-subtitulo .texto-imagem-paragrafo{
+    color: black;
+}
+body.modo-escuro .modo-toggle .bola {
+    transform: translateX(40px);
+}
+
+body .modo-escuro .modo-toggle {
+    background-color: #555;
+}
+
+body .modo-escuro .modo-toggle .bola {
+    transform: translateX(20px);
+}
+
+.modo-escuro .bola-modo-escuro {
+    background-color: #fff;
 }
 
 

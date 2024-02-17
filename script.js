@@ -1,7 +1,5 @@
 
 
-
-
 function abrirMenu(){
     let cabecalho = document.querySelector('.cabecalho');
     let cabecalhoMenu = document.querySelector('.cabecalho__menu');
@@ -47,6 +45,21 @@ function abrirMenu(){
         barra3.style.transition = '0.3s';
 
 
-
     }
+}
+
+function alternarModoEscuro() {
+    let modoToggle = document.querySelector('.modo-toggle');
+    let corpo = document.body;
+    corpo.classList.toggle('modo-escuro');
+
+    if(corpo.classList.contains("modo-escuro")){
+    modoToggle.style.backgroundColor = '#555';
+    }else{
+    modoToggle.style.backgroundColor = '#ddd';
+    }
+
+
+    let bola = document.querySelector('.bola');
+    bola.classList.toggle('bola-modo-escuro');
 }
