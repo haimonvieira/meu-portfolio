@@ -313,6 +313,9 @@ body .modo-escuro .modo-toggle .bola {
         flex-direction: column;
         align-items: center;
     }
+    .meus-projetos{
+        width: 50%;
+    }
 
 }
 
