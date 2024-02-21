@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Habilidades</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles/style.css" />
     <script src="script.js"></script>
   </head>
@@ -15,6 +15,7 @@
           <div class="menu-bar__barra barra-2"></div>
           <div class="menu-bar__barra barra-3"></div>
         </div>
+
         <nav class="cabecalho__menu">
           <a class="cabecalho__menu__destaque" href="index.html">Início</a>
           <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
@@ -28,29 +29,37 @@
       </div>
     </header>
     <main class="apresentacao">
-      <section class="apresentacao__habilidades">
-        <h1 class="apresentacao__conteudo__titulo">Minhas habilidades</h1>
+      <section class="apresentacao__projetos">
+        <h1 class="apresentacao__conteudo__titulo">Projetos</h1>
 
-        <h2 class="apresentacao__conteudo__subtitulo">Front-end</h2>
+        <div class="apresentacao__projetos__projeto">
+          <a
+            class="meus-projetos"
+            href="https://haimonvieira.github.io/decodificador-de-texto/"
+          >
+            <h2>Decodificador de texto</h2>
+            <div class="box-projetos">
+              <img
+                class="foto-projeto"
+                src="assets/print_projeto/decodificador-de-texto.png"
+                alt=""
+              />
+            </div>
+          </a>
 
-        <div class="skills">
-          <div class="box">
-            <p>HTML5</p>
-            <img src="assets/icons/resize/logo-html.png" alt="Logo HTML5" />
-          </div>
-          <div class="box">
-            <p>CSS</p>
-            <img src="assets/icons/resize/logo-css.png" alt="Logo CSS" />
-          </div>
-        </div>
-
-        <h2 class="apresentacao__conteudo__subtitulo">Back-end</h2>
-
-        <div class="skills">
-          <div class="box">
-            <p>JavaScript</p>
-            <img src="assets/icons/resize/logo-js.png" alt="Logo JavaScript" />
-          </div>
+          <a
+            class="meus-projetos"
+            href="https://jogo-do-numero-secreto-pi-eight.vercel.app"
+          >
+            <h2>Jogo do número secreto</h2>
+            <div class="box-projetos">
+              <img
+                class="foto-projeto"
+                src="assets/print_projeto/jogo-do-numero-secreto.png"
+                alt=""
+              />
+            </div>
+          </a>
         </div>
       </section>
     </main>
