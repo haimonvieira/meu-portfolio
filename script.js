@@ -29,7 +29,6 @@ function abrirMenu() {
   } else {
     //Fechando o Menu
     cabecalho.style.height = "";
-    cabecalho.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
     menuBar.style.marginBottom = "";
     barra1.style.transition = "0.3s";
     barra2.style.transition = "0.3s";
@@ -39,6 +38,8 @@ function abrirMenu() {
 
 function alternarModoEscuro() {
   let modoToggle = document.querySelector(".modo-toggle");
+  let paragrafoDestaque = document.querySelector(".paragrafo-destaque");
+  let tituloDestaque = document.querySelector(".titulo-destaque");
   let corpo = document.body;
   let menuBar = document.querySelector(".menu-bar");
   corpo.classList.toggle("modo-escuro");

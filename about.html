@@ -18,11 +18,11 @@
         <nav class="cabecalho__menu">
           <a class="cabecalho__menu__destaque" href="index.html">Início</a>
           <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
-          <a class="cabecalho__menu__link">Contato</a>
+          <!-- <a class="cabecalho__menu__link">Contato</a> -->
           <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
           <a class="cabecalho__menu__link" href="portfolio.html">Portfólio</a>
-          <div class="modo-toggle">
-            <div class="bola" onclick="alternarModoEscuro()"></div>
+          <div class="modo-toggle" onclick="alternarModoEscuro()">
+            <div class="bola"></div>
           </div>
         </nav>
       </div>
@@ -40,14 +40,14 @@
 
         <p class="apresentacao__conteudo__paragrafo">
           Aproveite que está aqui, e veja um pouco dos
-          <a style="color: black; font-weight: bold" href="portfolio.html"
+          <span><a class="paragrafo-destaque" href="portfolio.html"
             >meus projetos</a
-          >.
+          ></span>.
         </p>
       </section>
 
       <img
-        class="apresentacao__perfil"
+        class="apresentacao__perfil-sobre"
         src="assets/foto_de_perfil.jpg"
         alt="Foto do autor"
       />
