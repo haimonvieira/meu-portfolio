@@ -1,3 +1,11 @@
+// Verifique se está no modo autônomo
+if (window.navigator.standalone) {
+  console.log('Estamos no modo autônomo! 🚀');
+} else {
+  console.log('Estamos no modo Safari comum. 🌐');
+}
+
+
 function abrirMenu() {
   let cabecalho = document.querySelector(".cabecalho");
   let cabecalhoMenu = document.querySelector(".cabecalho__menu");

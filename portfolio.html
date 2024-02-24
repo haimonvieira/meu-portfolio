@@ -10,18 +10,40 @@
     />
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="scripts/script.js"></script>
-    <script src="scripts/service-worker.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then((registration) => {
-            console.log('Service Worker registrado com sucesso:', registration);
-          })
-          .catch((error) => {
-            console.log('Erro ao registrar Service Worker:', error);
+    <script src="scripts/script.js">
+      document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('a');
+
+        links.forEach((link) => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const url = link.getAttribute('href');
+            history.pushState(null, '', url);
+            fetchPage(url);
           });
-      }
+        });
+
+        function fetchPage(url) {
+          fetch(url)
+            .then((response) => response.text())
+            .then((html) => {
+              document.body.innerHTML = html;
+              const state = { html, pageTitle: document.title, url };
+              history.pushState(state, '', url);
+
+              // Atualize a tag meta para manter o modo autônomo
+              const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
+              if (standaloneMetaTag) {
+                standaloneMetaTag.remove();
+                const newStandaloneMetaTag = document.createElement('meta');
+                newStandaloneMetaTag.name = 'apple-mobile-web-app-capable';
+                newStandaloneMetaTag.content = 'yes';
+                document.head.appendChild(newStandaloneMetaTag);
+              }
+            })
+            .catch((error) => console.error('Erro ao carregar a página:', error));
+        }
+      });
     </script>
   </head>
   <body>
