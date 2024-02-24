@@ -30,19 +30,18 @@
               document.body.innerHTML = html;
               const state = { html, pageTitle: document.title, url };
               history.pushState(state, '', url);
-
-              // Atualize a tag meta para manter o modo autônomo
-              const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
-              if (standaloneMetaTag) {
-                standaloneMetaTag.remove();
-                const newStandaloneMetaTag = document.createElement('meta');
-                newStandaloneMetaTag.name = 'apple-mobile-web-app-capable';
-                newStandaloneMetaTag.content = 'yes';
-                document.head.appendChild(newStandaloneMetaTag);
-              }
             })
             .catch((error) => console.error('Erro ao carregar a página:', error));
+
+        // Garanta que a tag meta esteja sempre presente para manter o modo autônomo
+        const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
+        if (!standaloneMetaTag) {
+          const newStandaloneMetaTag = document.createElement('meta');
+          newStandaloneMetaTag.name = 'apple-mobile-web-app-capable';
+          newStandaloneMetaTag.content = 'yes';
+          document.head.appendChild(newStandaloneMetaTag);
         }
+      }
       });
     </script>
   </head>
