@@ -174,7 +174,7 @@ body{
     font-family: var(--paragraph-font-montserrat);
     display: flex;
     justify-content: space-around;
-    padding: 2%;
+    padding: 5%;
     background-color: darkgrey;
     border-radius: 5px;
 }
@@ -341,9 +341,6 @@ body .modo-escuro .modo-toggle .bola {
     .apresentacao__conteudo{
         width: auto;
         padding: 10px;
-    }
-    .apresentacao__habilidades{
-        padding: 10%;
     }
     .apresentacao__perfil-inicio{
         margin-top: 50px;
