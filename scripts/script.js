@@ -38,8 +38,6 @@ function abrirMenu() {
 
 function alternarModoEscuro() {
   let modoToggle = document.querySelector(".modo-toggle");
-  let paragrafoDestaque = document.querySelector(".paragrafo-destaque");
-  let tituloDestaque = document.querySelector(".titulo-destaque");
   let corpo = document.body;
   let menuBar = document.querySelector(".menu-bar");
   corpo.classList.toggle("modo-escuro");
