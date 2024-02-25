@@ -14,7 +14,22 @@
     padding: 0;
 }
 
- /* cabecalho */
+/* barra de rolagem */
+
+::-webkit-scrollbar {
+    width: 8px; 
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color); 
+    border-radius: 6px; 
+}
+  
+::-webkit-scrollbar-track {
+ background-color: #f1f1f1; /* Cor da trilha da barra de rolagem */
+}
+  
+
+/* cabecalho */
 
 .cabecalho{
     top: 0vh;
@@ -30,7 +45,7 @@
 .cabecalho__menu{
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .cabecalho__menu__link{
@@ -74,6 +89,7 @@ body{
 .paragrafo-destaque{
     color: var(--accent-color);
     font-weight: bold;
+    font-size: 1.6rem;
 }
 
 /* apresentacao e index.html, about.html*/
@@ -284,15 +300,16 @@ body.modo-escuro .botao-decodificar:hover{
     align-items: center;
     background-color: #ddd;
     height: 20px;
-    width: 70px;
+    width: 50px;
     border-radius: 10px;
     padding: 5px;
     cursor: pointer;
+    /* margin-right: 20px; */
 }
 
 .bola {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: #555;
     border-radius: 50%;
     transition: transform 0.5s ease;
@@ -307,9 +324,27 @@ body.modo-escuro .texto-imagem-subtitulo .texto-imagem-paragrafo{
     color: black;
 }
 body.modo-escuro .modo-toggle .bola {
-    transform: translateX(40px);
+    transform: translateX(25px);
 }
-
+body.modo-escuro .titulo-destaque{
+    color: dodgerblue;
+}
+body.modo-escuro .apresentacao__links__navegacao{
+    color: dodgerblue;
+    border: 2px solid dodgerblue;
+}
+body.modo-escuro .rodape{
+    background-color: dodgerblue;
+}
+body.modo-escuro .cabecalho__menu__destaque{
+    background-color: dodgerblue;
+}
+body.modo-escuro .paragrafo-destaque{
+    color: dodgerblue;
+}
+body.modo-escuro .box{
+    background-color: #b8b3b3;
+}
 body .modo-escuro .modo-toggle {
     background-color: #555;
 }
@@ -331,9 +366,6 @@ body .modo-escuro .modo-toggle .bola {
     }
     .cabecalho__menu{
         justify-content: center;
-    }
-    .cabecalho__menu__destaque{
-        padding: 3%;
     }
     .apresentacao{
         flex-direction: column-reverse;
@@ -370,7 +402,7 @@ body .modo-escuro .modo-toggle .bola {
 
 }
 
-@media (max-width: 500px){
+@media (max-width: 768px){
     .cabecalho-menu-ativo{
         transition: 1s;
     }
@@ -422,9 +454,11 @@ body .modo-escuro .modo-toggle .bola {
     }
     .apresentacao__perfil-inicio{
         width: 70%;
+        margin-top: 10%;
     }
     .apresentacao__perfil-sobre{
         width: 70%;
+        margin-top: 10%;
     }
     .skills{
         flex-wrap: wrap;
@@ -447,10 +481,6 @@ body .modo-escuro .modo-toggle .bola {
     .cabecalho__menu__destaque{
         padding: 4.1%;
     }
-    .apresentacao__perfil{
-        margin-top: 70px;
-        width: 50%;
-    }
     .cabecalho__menu__destaque{
         font-size: 1.5rem;
         text-align: center;
@@ -460,4 +490,15 @@ body .modo-escuro .modo-toggle .bola {
     }
     
     
+}
+
+@media (max-width: 500px){
+
+    .apresentacao__perfil-inicio{
+        margin-top: 15%;
+    }
+    .apresentacao__perfil-sobre{
+        margin-top: 15%;
+    }
+
 }

@@ -1,10 +1,3 @@
-// Verifique se está no modo autônomo
-if (window.navigator.standalone) {
-  console.log('Estamos no modo autônomo! 🚀');
-} else {
-  console.log('Estamos no modo Safari comum. 🌐');
-}
-
 
 function abrirMenu() {
   let cabecalho = document.querySelector(".cabecalho");
@@ -32,7 +25,6 @@ function abrirMenu() {
     cabecalhoMenu.style.display = "none";
   }
 
-  //Verificar se o menu está aberto ou fechado e executar as devidas ações
   if (cabecalho.classList.contains("cabecalho-menu-ativo")) {
   } else {
     //Fechando o Menu
