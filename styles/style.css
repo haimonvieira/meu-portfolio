@@ -90,7 +90,12 @@ body{
 .paragrafo-destaque{
     color: var(--accent-color);
     font-weight: bold;
-    font-size: 1.6rem;
+    transition: 0.5s;
+}
+.paragrafo-destaque:hover{
+    color: rgba(15, 10, 222, 0.8);
+    font-size: 1.7rem;
+    transition: 0.5s;
 }
 
 /* apresentacao e index.html, about.html*/
