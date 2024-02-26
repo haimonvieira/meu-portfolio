@@ -1,6 +1,6 @@
-
 function abrirMenu() {
   let cabecalho = document.querySelector(".cabecalho");
+  let corpo = document.body;
   let cabecalhoMenu = document.querySelector(".cabecalho__menu");
   let cabecalhoMenuDestaque = document.querySelector(
     ".cabecalho__menu__destaque"
@@ -21,8 +21,10 @@ function abrirMenu() {
   if (cabecalho.classList.contains("cabecalho-menu-ativo")) {
     cabecalhoMenu.style.display = "flex";
     cabecalhoMenu.style.flexDirection = "column";
+    corpo.style.overflow = "hidden";
   } else {
     cabecalhoMenu.style.display = "none";
+    corpo.style.overflow = "";
   }
 
   if (cabecalho.classList.contains("cabecalho-menu-ativo")) {

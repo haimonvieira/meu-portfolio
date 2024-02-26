@@ -406,9 +406,6 @@ body .modo-escuro .modo-toggle .bola {
 }
 
 @media (max-width: 768px){
-    .cabecalho-menu-ativo{
-        transition: 1s;
-    }
     .menu-bar{
         background-color: whitesmoke;
         display: flex;
@@ -457,11 +454,11 @@ body .modo-escuro .modo-toggle .bola {
     }
     .apresentacao__perfil-inicio{
         width: 70%;
-        margin-top: 10%;
+        margin-top: 15%;
     }
     .apresentacao__perfil-sobre{
         width: 70%;
-        margin-top: 10%;
+        margin-top: 12%;
     }
     .skills{
         flex-wrap: wrap;
@@ -477,6 +474,7 @@ body .modo-escuro .modo-toggle .bola {
         align-items: flex-start;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.8);
+        transition: 1s;
     }
     .cabecalho__menu{
         display: none;
@@ -498,10 +496,10 @@ body .modo-escuro .modo-toggle .bola {
 @media (max-width: 500px){
 
     .apresentacao__perfil-inicio{
-        margin-top: 15%;
+        margin-top: 20%;
     }
     .apresentacao__perfil-sobre{
-        margin-top: 15%;
+        margin-top: 20%;
     }
 
 }
