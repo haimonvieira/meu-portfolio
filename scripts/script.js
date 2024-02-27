@@ -71,3 +71,4 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBar.style.backgroundColor = "rgb(104, 104, 104)";
   }
 });
+

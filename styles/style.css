@@ -143,6 +143,10 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 32px;
+    img{
+        width: 40px;
+        height: 40px;
+    }
 }
 .apresentacao__links__subtitulo{
     font-family: var(--title-font-kronaone);
@@ -153,6 +157,7 @@ body{
     background-color: var(--background);
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 16px;
     width: 50%;
     text-align: center;
@@ -406,6 +411,9 @@ body .modo-escuro .modo-toggle .bola {
 }
 
 @media (max-width: 768px){
+    .cabecalho__menu__link:hover{
+        background-color: unset;
+    }
     .menu-bar{
         background-color: whitesmoke;
         display: flex;
@@ -423,6 +431,7 @@ body .modo-escuro .modo-toggle .bola {
         border-radius: 8px;
         width: 40px;
         height: 4px;
+        transition: 0.5s;
     }
     .menu-ativo .barra-1 {
         transform: rotate(-45deg) translate(-8px, 5px);
@@ -430,7 +439,7 @@ body .modo-escuro .modo-toggle .bola {
     }
   
     .menu-ativo .barra-2 {
-        opacity: 0;
+        transform: rotateY(90deg);
     }
   
     .menu-ativo .barra-3 {
