@@ -10,7 +10,11 @@
     />
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <link rel="shortcut icon" type="imagex/png" href="assets/icons/icon-website.ico">
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="assets/icons/icon-website.ico"
+    />
     <script src="scripts/script.js">
       document.addEventListener('DOMContentLoaded', () => {
         const links = document.querySelectorAll('a');
@@ -34,18 +38,19 @@
             })
             .catch((error) => console.error('Erro ao carregar a página:', error));
 
-        // Garanta que a tag meta esteja sempre presente para manter o modo autônomo
-        const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
-        if (!standaloneMetaTag) {
-          const newStandaloneMetaTag = document.createElement('meta');
-          newStandaloneMetaTag.name = 'apple-mobile-web-app-capable';
-          newStandaloneMetaTag.content = 'yes';
-          document.head.appendChild(newStandaloneMetaTag);
+          // Garanta que a tag meta esteja sempre presente para manter o modo autônomo
+          const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
+          if (!standaloneMetaTag) {
+            const newStandaloneMetaTag = document.createElement('meta');
+            newStandaloneMetaTag.name = 'apple-mobile-web-app-capable';
+            newStandaloneMetaTag.content = 'yes';
+            document.head.appendChild(newStandaloneMetaTag);
+          }
         }
-      }
       });
     </script>
   </head>
+
   <body>
     <header class="cabecalho">
       <div class="menu-inativo">
@@ -72,33 +77,108 @@
         <h1 class="apresentacao__conteudo__titulo">Projetos</h1>
 
         <div class="apresentacao__projetos__projeto">
-          <a
-            class="meus-projetos"
-            href="https://haimonvieira.github.io/decodificador-de-texto/"
-          >
-            <h2>Decodificador de texto</h2>
-            <div class="box-projetos">
-              <img
-                class="foto-projeto"
-                src="assets/print_projeto/decodificador-de-texto.png"
-                alt=""
-              />
-            </div>
-          </a>
+          <h1 id="subtitulo__projeto">Challenges ONE</h1>
+          <div class="coluna">
+            <a
+              class="meus-projetos"
+              href="https://github.com/haimonvieira/challenge-literalura"
+            >
+              <h2>LiterAlura</h2>
+              <div class="box-projetos">
+                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+              </div>
+            </a>
 
-          <a
-            class="meus-projetos"
-            href="https://jogo-do-numero-secreto-pi-eight.vercel.app"
-          >
-            <h2>Jogo do número secreto</h2>
-            <div class="box-projetos">
-              <img
-                class="foto-projeto"
-                src="assets/print_projeto/jogo-do-numero-secreto.png"
-                alt=""
-              />
-            </div>
-          </a>
+            <a
+              class="meus-projetos"
+              href="https://github.com/haimonvieira/challenge-forum-hub"
+            >
+              <h2>Fórum Hub: API RESTful</h2>
+              <div class="box-projetos">
+                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+              </div>
+            </a>
+          </div>
+
+          <div class="coluna">
+            <a
+              class="meus-projetos"
+              href="https://github.com/haimonvieira/conversor-de-moeda"
+            >
+              <h2>Conversor de moedas</h2>
+              <div class="box-projetos">
+                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+              </div>
+            </a>
+          </div>
+
+          <h1 id="subtitulo__projeto">Projetos Pessoais</h1>
+          <div class="coluna">
+            <a
+              class="meus-projetos"
+              href="https://github.com/haimonvieira/bitwarden-import"
+            >
+              <h2>
+                Bitwarden Import
+              </h2>
+              <div class="box-projetos">
+                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+              </div>
+            </a>
+          </div>
+
+          <h1 id="subtitulo__projeto">Desafios ONE</h1>
+          <div class="coluna">
+            <a
+              class="meus-projetos"
+              href="https://haimonvieira.github.io/decodificador-de-texto/"
+            >
+              <h2>Decodificador de texto</h2>
+              <div class="box-projetos">
+                <img
+                  class="foto-projeto"
+                  src="assets/print_projeto/decodificador-de-texto.png"
+                  alt=""
+                />
+              </div>
+            </a>
+
+            <a
+              class="meus-projetos"
+              href="https://github.com/haimonvieira/java-desafio-web"
+            >
+              <h2>Java: Desafio Web</h2>
+              <div class="box-projetos">
+                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+              </div>
+            </a>
+          </div>
+
+          <div class="coluna">
+            <a
+              class="meus-projetos"
+              href="https://github.com/haimonvieira/fipe-api"
+            >
+              <h2>Fipe API</h2>
+              <div class="box-projetos">
+                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+              </div>
+            </a>
+
+            <a
+              class="meus-projetos"
+              href="https://jogo-do-numero-secreto-pi-eight.vercel.app"
+            >
+              <h2>Jogo do número secreto</h2>
+              <div class="box-projetos">
+                <img
+                  class="foto-projeto"
+                  src="assets/print_projeto/jogo-do-numero-secreto.png"
+                  alt=""
+                />
+              </div>
+            </a>
+          </div>
         </div>
       </section>
     </main>
