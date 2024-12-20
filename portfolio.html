@@ -1,192 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link
-      rel="shortcut icon"
-      type="imagex/png"
-      href="assets/icons/icon-website.ico"
-    />
-    <script src="scripts/script.js">
-      document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('a');
 
-        links.forEach((link) => {
-          link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const url = link.getAttribute('href');
-            history.pushState(null, '', url);
-            fetchPage(url);
-          });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="assets/icons/icon-website.ico" />
+  <script src="scripts/script.js">
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a');
+
+      links.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const url = link.getAttribute('href');
+          history.pushState(null, '', url);
+          fetchPage(url);
         });
-
-        function fetchPage(url) {
-          fetch(url)
-            .then((response) => response.text())
-            .then((html) => {
-              document.body.innerHTML = html;
-              const state = { html, pageTitle: document.title, url };
-              history.pushState(state, '', url);
-            })
-            .catch((error) => console.error('Erro ao carregar a página:', error));
-
-          // Garanta que a tag meta esteja sempre presente para manter o modo autônomo
-          const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
-          if (!standaloneMetaTag) {
-            const newStandaloneMetaTag = document.createElement('meta');
-            newStandaloneMetaTag.name = 'apple-mobile-web-app-capable';
-            newStandaloneMetaTag.content = 'yes';
-            document.head.appendChild(newStandaloneMetaTag);
-          }
-        }
       });
-    </script>
-  </head>
 
-  <body>
-    <header class="cabecalho">
-      <div class="menu-inativo">
-        <div class="menu-bar" onclick="abrirMenu()">
-          <div class="menu-bar__barra barra-1"></div>
-          <div class="menu-bar__barra barra-2"></div>
-          <div class="menu-bar__barra barra-3"></div>
-        </div>
+      function fetchPage(url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((html) => {
+            document.body.innerHTML = html;
+            const state = { html, pageTitle: document.title, url };
+            history.pushState(state, '', url);
+          })
+          .catch((error) => console.error('Erro ao carregar a página:', error));
 
-        <nav class="cabecalho__menu">
-          <a class="cabecalho__menu__destaque" href="index.html">Início</a>
-          <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
-          <!-- <a class="cabecalho__menu__link">Contato</a> -->
-          <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-          <a class="cabecalho__menu__link" href="portfolio.html">Portfólio</a>
-          <div class="modo-toggle" onclick="alternarModoEscuro()">
-            <div class="bola"></div>
-          </div>
-        </nav>
+        // Garanta que a tag meta esteja sempre presente para manter o modo autônomo
+        const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
+        if (!standaloneMetaTag) {
+          const newStandaloneMetaTag = document.createElement('meta');
+          newStandaloneMetaTag.name = 'apple-mobile-web-app-capable';
+          newStandaloneMetaTag.content = 'yes';
+          document.head.appendChild(newStandaloneMetaTag);
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <header class="cabecalho">
+    <div class="menu-inativo">
+      <div class="menu-bar" onclick="abrirMenu()">
+        <div class="menu-bar__barra barra-1"></div>
+        <div class="menu-bar__barra barra-2"></div>
+        <div class="menu-bar__barra barra-3"></div>
       </div>
-    </header>
-    <main class="apresentacao">
-      <section class="apresentacao__projetos">
-        <h1 class="apresentacao__conteudo__titulo">Projetos</h1>
 
-        <div class="apresentacao__projetos__projeto">
-          <h1 id="subtitulo__projeto">Challenges ONE</h1>
-          <div class="coluna">
-            <a
-              class="meus-projetos"
-              href="https://github.com/haimonvieira/challenge-literalura"
-            >
-              <h2>LiterAlura</h2>
-              <div class="box-projetos">
-                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
-              </div>
-            </a>
-
-            <a
-              class="meus-projetos"
-              href="https://github.com/haimonvieira/challenge-forum-hub"
-            >
-              <h2>Fórum Hub: API RESTful</h2>
-              <div class="box-projetos">
-                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
-              </div>
-            </a>
-          </div>
-
-          <div class="coluna">
-            <a
-              class="meus-projetos"
-              href="https://github.com/haimonvieira/conversor-de-moeda"
-            >
-              <h2>Conversor de moedas</h2>
-              <div class="box-projetos">
-                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
-              </div>
-            </a>
-          </div>
-
-          <h1 id="subtitulo__projeto">Projetos Pessoais</h1>
-          <div class="coluna">
-            <a
-              class="meus-projetos"
-              href="https://github.com/haimonvieira/bitwarden-import"
-            >
-              <h2>
-                Bitwarden Import
-              </h2>
-              <div class="box-projetos">
-                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
-              </div>
-            </a>
-          </div>
-
-          <h1 id="subtitulo__projeto">Desafios ONE</h1>
-          <div class="coluna">
-            <a
-              class="meus-projetos"
-              href="https://haimonvieira.github.io/decodificador-de-texto/"
-            >
-              <h2>Decodificador de texto</h2>
-              <div class="box-projetos">
-                <img
-                  class="foto-projeto"
-                  src="assets/print_projeto/decodificador-de-texto.png"
-                  alt=""
-                />
-              </div>
-            </a>
-
-            <a
-              class="meus-projetos"
-              href="https://github.com/haimonvieira/java-desafio-web"
-            >
-              <h2>Java: Desafio Web</h2>
-              <div class="box-projetos">
-                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
-              </div>
-            </a>
-          </div>
-
-          <div class="coluna">
-            <a
-              class="meus-projetos"
-              href="https://github.com/haimonvieira/fipe-api"
-            >
-              <h2>Fipe API</h2>
-              <div class="box-projetos">
-                <img class="foto-projeto" src="assets/logo-github.png" alt="" />
-              </div>
-            </a>
-
-            <a
-              class="meus-projetos"
-              href="https://jogo-do-numero-secreto-pi-eight.vercel.app"
-            >
-              <h2>Jogo do número secreto</h2>
-              <div class="box-projetos">
-                <img
-                  class="foto-projeto"
-                  src="assets/print_projeto/jogo-do-numero-secreto.png"
-                  alt=""
-                />
-              </div>
-            </a>
-          </div>
+      <nav class="cabecalho__menu">
+        <a class="cabecalho__menu__destaque" href="index.html">Início</a>
+        <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
+        <!-- <a class="cabecalho__menu__link">Contato</a> -->
+        <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+        <a class="cabecalho__menu__link" href="portfolio.html">Portfólio</a>
+        <div class="modo-toggle" onclick="alternarModoEscuro()">
+          <div class="bola"></div>
         </div>
-      </section>
-    </main>
-    <footer>
-      <p class="rodape">
-        &copy; Desenvolvido por Haimon Cugler Vieira. Todos os direitos
-        reservados.
-      </p>
-    </footer>
-  </body>
+      </nav>
+    </div>
+  </header>
+  <main class="apresentacao">
+    <section class="apresentacao__projetos">
+      <h1 class="apresentacao__conteudo__titulo">Projetos</h1>
+
+      <div class="apresentacao__projetos__projeto">
+        <h1 id="subtitulo__projeto">Challenges ONE</h1>
+        <div class="coluna">
+          <a class="meus-projetos" href="https://github.com/haimonvieira/challenge-literalura">
+            <h2>LiterAlura</h2>
+            <div class="box-projetos">
+              <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+            </div>
+          </a>
+
+          <a class="meus-projetos" href="https://github.com/haimonvieira/challenge-forum-hub">
+            <h2>Fórum Hub: API RESTful</h2>
+            <div class="box-projetos">
+              <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+            </div>
+          </a>
+        </div>
+
+
+        <a class="meus-projetos" href="https://github.com/haimonvieira/conversor-de-moeda">
+          <h2>Conversor de moedas</h2>
+          <div class="box-projetos">
+            <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+          </div>
+        </a>
+
+
+        <h1 id="subtitulo__projeto">Projetos Pessoais</h1>
+        <a class="meus-projetos" href="https://github.com/haimonvieira/bitwarden-import">
+          <h2>
+            Bitwarden Import
+          </h2>
+          <div class="box-projetos">
+            <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+          </div>
+        </a>
+
+        <h1 id="subtitulo__projeto">Desafios ONE</h1>
+        <div class="coluna">
+          <a class="meus-projetos" href="https://haimonvieira.github.io/decodificador-de-texto/">
+            <h2>Decodificador de texto</h2>
+            <div class="box-projetos">
+              <img class="foto-projeto" src="assets/print_projeto/decodificador-de-texto.png" alt="" />
+            </div>
+          </a>
+
+          <a class="meus-projetos" href="https://github.com/haimonvieira/java-desafio-web">
+            <h2>Java: Desafio Web</h2>
+            <div class="box-projetos">
+              <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+            </div>
+          </a>
+        </div>
+
+        <div class="coluna">
+          <a class="meus-projetos" href="https://github.com/haimonvieira/fipe-api">
+            <h2>Fipe API</h2>
+            <div class="box-projetos">
+              <img class="foto-projeto" src="assets/logo-github.png" alt="" />
+            </div>
+          </a>
+
+          <a class="meus-projetos" href="https://jogo-do-numero-secreto-pi-eight.vercel.app">
+            <h2>Jogo do número secreto</h2>
+            <div class="box-projetos">
+              <img class="foto-projeto" src="assets/print_projeto/jogo-do-numero-secreto.png" alt="" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="rodape">
+      &copy; Desenvolvido por Haimon Cugler Vieira. Todos os direitos
+      reservados.
+    </p>
+  </footer>
+</body>
+
 </html>

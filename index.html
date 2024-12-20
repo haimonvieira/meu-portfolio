@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="shortcut icon" type="imagex/png" href="assets/icons/icon-website.ico">
-    <script src="scripts/script.js">
-      document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('a');
 
-        links.forEach((link) => {
-          link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const url = link.getAttribute('href');
-            history.pushState(null, '', url);
-            fetchPage(url);
-          });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="assets/icons/icon-website.ico">
+  <script src="scripts/script.js">
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a');
+
+      links.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const url = link.getAttribute('href');
+          history.pushState(null, '', url);
+          fetchPage(url);
         });
+      });
 
-        function fetchPage(url) {
-          fetch(url)
-            .then((response) => response.text())
-            .then((html) => {
-              document.body.innerHTML = html;
-              const state = { html, pageTitle: document.title, url };
-              history.pushState(state, '', url);
-            })
-            .catch((error) => console.error('Erro ao carregar a página:', error));
+      function fetchPage(url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((html) => {
+            document.body.innerHTML = html;
+            const state = { html, pageTitle: document.title, url };
+            history.pushState(state, '', url);
+          })
+          .catch((error) => console.error('Erro ao carregar a página:', error));
 
         // Garanta que a tag meta esteja sempre presente para manter o modo autônomo
         const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
@@ -43,80 +41,69 @@
           document.head.appendChild(newStandaloneMetaTag);
         }
       }
-      });
-    </script>
-  </head>
-  <body>
-    <header class="cabecalho">
-      <div class="menu-inativo">
-        <div class="menu-bar" onclick="abrirMenu()">
-          <div class="menu-bar__barra barra-1"></div>
-          <div class="menu-bar__barra barra-2"></div>
-          <div class="menu-bar__barra barra-3"></div>
-        </div>
+    });
+  </script>
+</head>
 
-        <nav class="cabecalho__menu">
-          <a class="cabecalho__menu__destaque" href="index.html">Início</a>
-          <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
-          <!-- <a class="cabecalho__menu__link">Contato</a> -->
-          <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-          <a class="cabecalho__menu__link" href="portfolio.html">Portfólio</a>
-          <div class="modo-toggle" onclick="alternarModoEscuro()">
-            <div class="bola"></div>
-          </div>
-        </nav>
+<body>
+  <header class="cabecalho">
+    <div class="menu-inativo">
+      <div class="menu-bar" onclick="abrirMenu()">
+        <div class="menu-bar__barra barra-1"></div>
+        <div class="menu-bar__barra barra-2"></div>
+        <div class="menu-bar__barra barra-3"></div>
       </div>
-    </header>
-    <main class="apresentacao">
-      <section class="apresentacao__conteudo">
-        <h1 class="apresentacao__conteudo__titulo">
-          Eleve seu negócio digital a outro nível
-          <span class="titulo-destaque">com um Front-end de qualidade!</span>
-        </h1>
 
-        <p class="apresentacao__conteudo__paragrafo">
-          Olá! Sou Haimon Cugler Vieira, desenvolvedor Front-end e Back-end.
-          Ajudo pequenos negócios e designers a colocarem em prática boas
-          ideias. Vamos conversar?
-        </p>
-
-        <div class="apresentacao__links">
-          <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
-          <a
-            class="apresentacao__links__navegacao"
-            href="https://github.com/haimonvieira"
-          >
-            <img src="assets/logo-github.png" alt="Logo do GitHub" />
-            GitHub
-          </a>
-          <a
-            class="apresentacao__links__navegacao"
-            href="https://linkedin.com/in/haimonvieira"
-          >
-            <img src="assets/logo-linkedin.png" alt="Logo LinkedIn" />
-            LinkedIn
-          </a>
-          <a
-            class="apresentacao__links__navegacao"
-            href="https://instagram.com/haimonvieira"
-          >
-            <img src="assets/logo-instagram.png" alt="Logo do instagram" />
-            Instagram
-          </a>
+      <nav class="cabecalho__menu">
+        <a class="cabecalho__menu__destaque" href="index.html">Início</a>
+        <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
+        <!-- <a class="cabecalho__menu__link">Contato</a> -->
+        <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+        <a class="cabecalho__menu__link" href="portfolio.html">Portfólio</a>
+        <div class="modo-toggle" onclick="alternarModoEscuro()">
+          <div class="bola"></div>
         </div>
-      </section>
+      </nav>
+    </div>
+  </header>
+  <main class="apresentacao">
+    <section class="apresentacao__conteudo">
+      <h1 class="apresentacao__conteudo__titulo">
+        Eleve seu negócio digital a outro nível
+        <span class="titulo-destaque">com um Full-stack de qualidade!</span>
+      </h1>
 
-      <img
-        class="apresentacao__perfil-inicio"
-        src="assets/foto-perfil.jpeg"
-        alt="Foto do autor"
-      />
-    </main>
-    <footer>
-      <p class="rodape">
-        &copy; Desenvolvido por Haimon Cugler Vieira. Todos os direitos
-        reservados.
+      <p class="apresentacao__conteudo__paragrafo">
+        Olá! Sou Haimon Cugler Vieira, desenvolvedor Front-end e Back-end.
+        Vou te ajudar a colocar em prática boas
+        ideias. Vamos conversar?
       </p>
-    </footer>
-  </body>
+
+      <div class="apresentacao__links">
+        <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
+        <a class="apresentacao__links__navegacao" href="https://github.com/haimonvieira">
+          <img src="assets/logo-github.png" alt="Logo do GitHub" />
+          GitHub
+        </a>
+        <a class="apresentacao__links__navegacao" href="https://linkedin.com/in/haimonvieira">
+          <img src="assets/logo-linkedin.png" alt="Logo LinkedIn" />
+          LinkedIn
+        </a>
+        <a class="apresentacao__links__navegacao" href="https://instagram.com/haimonvieira">
+          <img src="assets/logo-instagram.png" alt="Logo do instagram" />
+          Instagram
+        </a>
+      </div>
+    </section>
+
+    <img class="apresentacao__perfil-inicio" src="assets/foto-perfil.jpeg" alt="Foto do autor" />
+  </main>
+  <footer>
+    <p class="rodape">
+      &copy; Desenvolvido por Haimon Cugler Vieira. Todos os direitos
+      reservados.
+    </p>
+  </footer>
+</body>
+
 </html>

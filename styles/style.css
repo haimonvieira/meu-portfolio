@@ -4,7 +4,6 @@
     --text-color: black;
     --accent-color: blue;
     --hover-color: rgba(0, 0, 0, 0.1); 
-
     --title-font-kronaone: 'Krona One', sans-serif;
     --paragraph-font-montserrat: 'Montserrat', sans-serif;
 
@@ -12,6 +11,13 @@
 *{
     margin: 0;
     padding: 0;
+}
+body{
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--paragraph-font-montserrat);
+    transition: 0.5s;
 }
 
 /* barra de rolagem */
@@ -76,12 +82,6 @@
 
 h1{
     font-weight: bold;
-}
-body{
-    box-sizing: border-box;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: 0.5s;
 }
 
 .titulo-destaque{
@@ -210,7 +210,8 @@ body{
 }
 .coluna{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 1em;
 }
 .meus-projetos{
     display: flex;
@@ -220,12 +221,10 @@ body{
     text-align: center;
     text-decoration: none;
     gap: 10px;
-    width: 50%;
-    height: auto;
+    width: 40%;
 }
 .box-projetos{
-    width:80%;
-    height: 80%;
+    width: 40%;
     background-color: var(--background-color);
     border-radius: 10px;
     border: 2px solid;
@@ -234,8 +233,7 @@ body{
     color: black;
 }
 .box-projetos:hover{
-    width: 100%;
-    height: 100%;
+    width: 45%;
     font-size: 1.25rem;
     cursor: pointer;
 }
@@ -410,16 +408,7 @@ body .modo-escuro .modo-toggle .bola {
         align-items: center;
         gap: 20px;
     }
-    .meus-projetos{
-        width: 50%;
-    }
-    .box-projetos{
-        width: 70%;
-        height: 60%;
-    }
-    .box-projetos:hover{
-        width: 110%;
-    }
+    
 
 }
 
@@ -510,10 +499,6 @@ body .modo-escuro .modo-toggle .bola {
     }
     .cabecalho__menu__link{
         font-size: 1.5rem;
-    }
-    .box-projetos{
-        width: 80%;
-        height: 80%;
     }
     
     

@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <title>Habilidades</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="shortcut icon" type="imagex/png" href="assets/icons/icon-website.ico">
-    <script src="scripts/script.js">
-        document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('a');
 
-        links.forEach((link) => {
-          link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const url = link.getAttribute('href');
-            history.pushState(null, '', url);
-            fetchPage(url);
-          });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Habilidades</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="assets/icons/icon-website.ico">
+  <script src="scripts/script.js">
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a');
+
+      links.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const url = link.getAttribute('href');
+          history.pushState(null, '', url);
+          fetchPage(url);
         });
+      });
 
-        function fetchPage(url) {
-          fetch(url)
-            .then((response) => response.text())
-            .then((html) => {
-              document.body.innerHTML = html;
-              const state = { html, pageTitle: document.title, url };
-              history.pushState(state, '', url);
-            })
-            .catch((error) => console.error('Erro ao carregar a página:', error));
+      function fetchPage(url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((html) => {
+            document.body.innerHTML = html;
+            const state = { html, pageTitle: document.title, url };
+            history.pushState(state, '', url);
+          })
+          .catch((error) => console.error('Erro ao carregar a página:', error));
 
         // Garanta que a tag meta esteja sempre presente para manter o modo autônomo
         const standaloneMetaTag = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
@@ -43,61 +41,101 @@
           document.head.appendChild(newStandaloneMetaTag);
         }
       }
-      });
-    </script>
-  </head>
-  <body>
-    <header class="cabecalho">
-      <div class="menu-inativo">
-        <div class="menu-bar" onclick="abrirMenu()">
-          <div class="menu-bar__barra barra-1"></div>
-          <div class="menu-bar__barra barra-2"></div>
-          <div class="menu-bar__barra barra-3"></div>
-        </div>
-        <nav class="cabecalho__menu">
-          <a class="cabecalho__menu__destaque" href="index.html">Início</a>
-          <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
-          <!-- <a class="cabecalho__menu__link">Contato</a> -->
-          <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-          <a class="cabecalho__menu__link" href="portfolio.html">Portfólio</a>
-          <div class="modo-toggle" onclick="alternarModoEscuro()">
-            <div class="bola"></div>
-          </div>
-        </nav>
+    });
+  </script>
+</head>
+
+<body>
+  <header class="cabecalho">
+    <div class="menu-inativo">
+      <div class="menu-bar" onclick="abrirMenu()">
+        <div class="menu-bar__barra barra-1"></div>
+        <div class="menu-bar__barra barra-2"></div>
+        <div class="menu-bar__barra barra-3"></div>
       </div>
-    </header>
-    <main class="apresentacao">
-      <section class="apresentacao__habilidades">
-        <h1 class="apresentacao__conteudo__titulo">Minhas habilidades</h1>
+      <nav class="cabecalho__menu">
+        <a class="cabecalho__menu__destaque" href="index.html">Início</a>
+        <a class="cabecalho__menu__link" href="skill.html">Habilidades</a>
+        <!-- <a class="cabecalho__menu__link">Contato</a> -->
+        <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+        <a class="cabecalho__menu__link" href="portfolio.html">Portfólio</a>
+        <div class="modo-toggle" onclick="alternarModoEscuro()">
+          <div class="bola"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="apresentacao">
+    <section class="apresentacao__habilidades">
+      <h1 class="apresentacao__conteudo__titulo">Minhas habilidades</h1>
 
-        <h2 class="apresentacao__conteudo__subtitulo">Front-end</h2>
+      <h2 class="apresentacao__conteudo__subtitulo">Front-end</h2>
 
-        <div class="skills">
-          <div class="box">
-            <p>HTML5</p>
-            <img src="assets/icons/logo-html.png" alt="Logo HTML5" />
-          </div>
-          <div class="box">
-            <p>CSS</p>
-            <img src="assets/icons/logo-css.png" alt="Logo CSS" />
-          </div>
+      <div class="skills">
+        <div class="box">
+          <p>HTML5</p>
+          <img src="assets/icons/logo-html.png" alt="Logo HTML5" />
+        </div>
+        <div class="box">
+          <p>CSS</p>
+          <img src="assets/icons/logo-css.png" alt="Logo CSS" />
+        </div>
+      </div>
+
+      <h2 class="apresentacao__conteudo__subtitulo">Back-end</h2>
+
+      <div class="skills">
+        <div class="box">
+          <p>JavaScript</p>
+          <img src="assets/icons/logo-js.png" alt="Logo JavaScript" />
         </div>
 
-        <h2 class="apresentacao__conteudo__subtitulo">Back-end</h2>
-
-        <div class="skills">
-          <div class="box">
-            <p>JavaScript</p>
-            <img src="assets/icons/logo-js.png" alt="Logo JavaScript" />
-          </div>
+        <div class="box">
+          <p>Java</p>
+          <img src="assets/icons/logo-java.png" alt="Logo Java">
         </div>
-      </section>
-    </main>
-    <footer>
-      <p class="rodape">
-        &copy; Desenvolvido por Haimon Cugler Vieira. Todos os direitos
-        reservados.
-      </p>
-    </footer>
-  </body>
+      </div>
+
+      <h2 class="apresentacao__conteudo__subtitulo">Banco de Dados</h2>
+
+      <div class="skills">
+
+        <div class="box">
+          <p>PostgreSQL</p>
+          <img src="assets/icons/logo-postgres.png" alt="Logo PostgreSQL" />
+        </div>
+
+        <div class="box">
+          <p>MySQL</p>
+          <img src="assets/icons/logo-mysql.png" alt="Logo MySQL">
+        </div>
+
+      </div>
+
+      <h2 class="apresentacao__conteudo__subtitulo">Ferramentas e tecnologias</h2>
+
+      <div class="skills">
+
+        <div class="box">
+          <p>Spring Boot</p>
+          <img src="assets/icons/logo-spring-boot.png" alt="Logo Spring Boot">
+        </div>
+
+        <div class="box">
+          <p>Git</p>
+          <img src="assets/icons/logo-git.png" alt="Logo Git">
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+  <footer>
+    <p class="rodape">
+      &copy; Desenvolvido por Haimon Cugler Vieira. Todos os direitos
+      reservados.
+    </p>
+  </footer>
+</body>
+
 </html>
